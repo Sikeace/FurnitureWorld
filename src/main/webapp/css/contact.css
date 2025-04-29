@@ -1,0 +1,76 @@
+@charset "UTF-8";/* contact.css */
+.contact-page {
+    padding: 30px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact-info {
+    flex: 1;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+
+}
+
+.contact-info h2 {
+    color: #444;
+    font-size: 2.9em;
+    margin-bottom: 20px;
+
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+
+.detail-item {
+    color: rgb(128, 128, 128);
+    line-height: 1.6;
+    font-size:1.2em;
+
+}
+
+.detail-item i { /* Targeting the icon element */
+    margin-right: 10px; /* Adding right margin to the icon */
+}
+
+.detail-item strong {
+    color: #333;
+    font-weight: bold;
+    display: inline; /* Changed back to inline */
+    margin-bottom: 5px;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-page {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .contact-video {
+        max-width: 100%;
+        margin-top: 30px;
+    }
+
+    .contact-info {
+        padding: 20px;
+    }
+
+    .contact-info h2 {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .contact-details {
+        gap: 15px;
+    }
+}

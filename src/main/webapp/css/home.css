@@ -1,0 +1,160 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7; /* Light gray background */
+    color: #333;
+    line-height: 1.7;
+	font-family: "Poppins", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #283438; /* Light sea green */
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: rgb(64, 128, 128) ; /* Olive drab */
+    color:white;
+}
+
+h1, h2 {
+    color: #444;
+    margin-bottom: 1em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        margin: 0;
+        border-radius: 0;
+    }
+}
+/* Home Page Specific Styles */
+.home-content {
+    padding: 30px;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    padding: 30px;
+}
+
+.hero-image {
+    flex: 1;
+    margin-right: 30px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 3em;
+    line-height: 1.1;
+    margin-bottom: 0.5em;
+}
+
+.hero-text p {
+    font-size: 1.1em;
+    margin-bottom: 1.5em;
+    color: rgb(128, 128, 128);
+}
+
+/* Product Previews Section */
+.product-previews {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.product-previews h2 {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    color: #444;
+}
+.product-prevdes{
+	display: flex;
+	flex-direction: column;
+	font-size: 1.0em;
+    margin-bottom: 30px;
+    color: #444;
+
+}
+
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.preview-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.preview-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.login-button{
+	color: white;
+}
+
+/* Responsive Home Page */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5em;
+    }
+
+    .preview-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        padding: 10px;
+        gap: 10px;
+    }
+}

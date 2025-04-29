@@ -1,0 +1,168 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7; /* Light gray background */
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.login-button{
+	color: rgb(255, 255, 255);
+}
+
+.login-button:hover {
+	color: rgb(255, 255, 255);
+}
+
+a:hover {
+    color: #408080; /* Example hover color */
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+
+
+h1, h2 {
+    color: #444;
+    margin-bottom: 1em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        margin: 0;
+        border-radius: 0;
+    }
+}
+heade.main-header{
+	
+	background-color: #f7f7f7 !important;/* Matches footer - !important to try and override */ 
+    color: #f7f7f7;
+}
+/* Header Styles */
+body .container .main-header { /* Increased specificity */
+    background-color: #283438; /* Matches footer - !important to try and override */
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    
+    
+}
+
+.logo p{
+	font-family:Edwardian Script ITC;
+    font-size: 1.2em;
+}
+
+.logo img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+
+
+.main-nav {
+    background-color: #283438; /* Force background color for nav */
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Center the navigation items */
+}
+
+.main-nav ul li:first-child {
+    margin-left: 0;
+}
+
+.main-nav a {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+}
+
+
+.main-nav a:hover {
+    color: rgb(64, 128, 128);
+}
+
+.header-actions .icon-link {
+    display: inline-block;
+}
+
+.header-actions .icon-link img {
+    height: 24px;
+}
+
+
+/* Responsive Header */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .main-header > .main-nav { /* Target nav within header */
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;	
+    }
+
+    .main-nav ul li {
+        margin: 10px 0;
+        margin-left: 0;
+    }
+
+    .header-actions {
+        margin-top: 10px;
+        
+    }
+    
+  
+}

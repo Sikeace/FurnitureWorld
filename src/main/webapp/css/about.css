@@ -1,0 +1,80 @@
+@charset "UTF-8";/* about.css */
+.about-page {
+    padding: 30px;
+}
+
+.about-hero {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.about-hero .hero-image {
+    flex: 0 0 40%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.about-hero .hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-hero .hero-text {
+    flex: 1;
+}
+
+.about-hero .hero-text h2 {
+    color: rgb(128, 128, 128);
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.about-hero .hero-text h1 {
+    color: #444;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.about-hero .hero-text p {
+    color: rgb(128, 128, 128);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.about-hero .hero-text .button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: rgb(64, 128, 128); /* Match your button color */
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.about-hero .hero-text .button:hover {
+    background-color: rgb(128, 128, 128); /* Match your button hover color */
+}
+.Thankyou{
+	font-family:Edwardian Script ITC;
+	font-size: 1.9em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-hero {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .about-hero .hero-image {
+        width: 80%;
+        margin: 0 auto 20px;
+    }
+}
