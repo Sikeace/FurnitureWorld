@@ -1,64 +1,80 @@
 package com.furnitureworld.service;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-	
+import com.furnitureworld.config.DbConfig;
+import com.furnitureworld.model.FurnitureModel; // Represents a user
+import com.furnitureworld.util.PasswordUtil;   // For password operations
 
-	import java.sql.Connection;
-	import java.sql.PreparedStatement;
-	import java.sql.ResultSet;
-	import java.sql.SQLException;
+/**
+ * Handles user login authentication.
+ */
+public class LoginService {
 
-	import com.furnitureworld.config.DbConfig;
-	import com.furnitureworld.model.FurnitureModel;
-	import com.furnitureworld.util.PasswordUtil;
+    private Connection dbConn; // Database connection
+    private boolean isConnectionError = false; // Flag for DB connection issues
 
-	
-	public class LoginService {
+    /**
+     * Constructor: Initializes database connection.
+     */
+    public LoginService() {
+        try {
+            dbConn = DbConfig.getDbConnection(); // Get connection
+        } catch (SQLException | ClassNotFoundException ex) {
+            ex.printStackTrace();
+            isConnectionError = true; // Mark connection error
+        }
+    }
 
-		private Connection dbConn;
-		private boolean isConnectionError = false;
+    /**
+     * Authenticates a user based on username and password.
+     * @param furnitureModel User object with login credentials.
+     * @return True if login successful, False if credentials mismatch, null if DB error.
+     */
+    public Boolean loginUser(FurnitureModel furnitureModel) {
+        // Check for initial connection error
+        if (isConnectionError) {
+            System.out.println("LoginService: Connection Error during initialization!");
+            return null;
+        }
 
-		
-		public LoginService() {
-			try {
-				dbConn = DbConfig.getDbConnection();
-			} catch (SQLException | ClassNotFoundException ex) {
-				ex.printStackTrace();
-				isConnectionError = true;
-			}
-		}
+        // SQL to find user by username
+        String query = "SELECT username, password, is_Admin FROM user WHERE username = ?";
+        try (PreparedStatement stmt = dbConn.prepareStatement(query)) {
+            stmt.setString(1, furnitureModel.getUsername()); // Set username in query
+            ResultSet result = stmt.executeQuery();
 
-		
-		public Boolean loginUser(FurnitureModel furnitureModel) {
-			if (isConnectionError) {
-				System.out.println("Connection Error!");
-				return null;
-			}
+            if (result.next()) { // If user found
+                // Set admin status from DB to the model
+                furnitureModel.setIs_Admin(result.getBoolean("is_Admin"));
+                // Validate the password
+                return validatePassword(result, furnitureModel);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null; // Return null on SQL error
+        }
 
-			String query = "SELECT username, password, is_Admin FROM register WHERE username = ?";
-			try (PreparedStatement stmt = dbConn.prepareStatement(query)) {
-				stmt.setString(1, furnitureModel.getUsername());
-				ResultSet result = stmt.executeQuery();
+        // User not found
+        return false;
+    }
 
-				if (result.next()) {
-					furnitureModel.setIs_Admin(result.getBoolean("is_Admin"));
-					return validatePassword(result, furnitureModel);
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-				return null;
-			}
+    /**
+     * Validates the provided password against the stored encrypted password.
+     * @param result ResultSet containing user data from DB.
+     * @param furnitureModel User object with plain-text password from login form.
+     * @return True if passwords match, false otherwise.
+     * @throws SQLException If DB access error.
+     */
+    private boolean validatePassword(ResultSet result, FurnitureModel furnitureModel) throws SQLException {
+        String dbUsername = result.getString("username"); // Username from DB
+        String dbPassword = result.getString("password"); // Encrypted password from DB
 
-			return false;
-		}
-
-
-		private boolean validatePassword(ResultSet result, FurnitureModel furnitureModel) throws SQLException {
-			String dbUsername = result.getString("username");
-			String dbPassword = result.getString("password");
-
-			return dbUsername.equals(furnitureModel.getUsername())
-					&& PasswordUtil.decrypt(dbPassword, dbUsername).equals(furnitureModel.getPassword());
-		}
-	}
-
+        // Compare usernames and decrypted password with submitted password
+        return dbUsername.equals(furnitureModel.getUsername())
+                && PasswordUtil.decrypt(dbPassword, dbUsername).equals(furnitureModel.getPassword());
+    }
+}

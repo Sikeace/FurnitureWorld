@@ -1,1 +1,386 @@
-@charset "UTF-8";
+/* css/admin.css - Add or modify existing styles */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4f5; /* Light background for the page */
+    margin: 0;
+    padding: 0;
+    color: #333; /* Default text color */
+}
+
+.dashboard-container { /* Main wrapper for admin content */
+    max-width: 1200px; /* Wider for more content */
+    margin: 20px auto; /* Centered with some top/bottom margin */
+    background: #ffffff;
+    padding: 30px; /* Uniform padding */
+    border-radius: 10px; /* Softer corners */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); /* Softer shadow */
+    /* text-align: center; Removed to allow more flexible content alignment */
+}
+
+h1 {
+    color: #2c3e50; /* Dark blue for main title */
+    margin-bottom: 30px;
+    text-align: center; /* Keep main title centered */
+    font-size: 2.2em;
+    font-weight: 600;
+}
+
+h2 { /* For section titles like "Furniture Inventory" */
+    color: #507e7f; /* Slightly lighter blue */
+    margin-top: 40px; /* Space above section titles */
+    margin-bottom: 20px;
+    font-size: 1.6em;
+    border-bottom: 2px solid #e0e0e0; /* Separator line */
+    padding-bottom: 10px;
+    font-weight: 500;
+}
+
+
+.card-container {
+    display: grid; /* Use grid for better card layout */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Responsive cards */
+    gap: 25px; /* Space between cards */
+    margin-bottom: 40px;
+}
+
+.dashboard-card {
+    background-color: #f8f9fa; /* Lighter card background */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    text-align: center; /* Center content within cards */
+    border: 1px solid #e9ecef;
+}
+
+.dashboard-card h2 {
+    color: #507e7f; /* Blue for card titles */
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.1em; /* Smaller card titles */
+    font-weight: 600;
+    border-bottom: none; /* Remove border from card h2 */
+}
+
+.dashboard-card p {
+    font-size: 2em; /* Larger stat numbers */
+    font-weight: 700; /* Bold stat numbers */
+    color: #343a40; /* Dark grey for stat numbers */
+    margin: 5px 0 0 0;
+}
+
+/* Search Bar Styles */
+.search-container {
+    margin-bottom: 30px;
+    margin-top: 10px; /* Space above search bar */
+    text-align: center; /* Center the search form */
+}
+
+.search-form {
+    display: inline-flex; /* Align input and button nicely */
+    align-items: center;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    overflow: hidden; /* To make border-radius work with button */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.search-input {
+    padding: 10px 15px;
+    border: none; /* Remove individual border */
+    font-size: 1em;
+    min-width: 300px; /* Decent width for search input */
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.search-button, .clear-search-button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #408080; /* Theme color */
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s;
+    white-space: nowrap; /* Prevent button text from wrapping */
+}
+.search-button i {
+    margin-right: 5px;
+}
+
+.search-button:hover {
+    background-color: #306060; /* Darker theme color */
+}
+
+.clear-search-button {
+    background-color: #6c757d; /* Grey for clear button */
+    text-decoration: none;
+    margin-left: 10px; /* Space it from the form */
+    border-radius: 6px;
+    color: white;
+    font-size: 0.9em;
+    padding: 11px 15px; /* Align height with search form */
+}
+.clear-search-button:hover {
+    background-color: #5a6268;
+}
+
+
+.furniture-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    border-radius: 8px; /* Rounded corners for table */
+    overflow: hidden; /* Clip content to rounded corners */
+}
+
+.furniture-table th, .furniture-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #dee2e6; /* Lighter border for rows */
+    text-align: left; /* Align text to left for better readability */
+}
+
+.furniture-table th {
+    background-color: #343a40; /* Dark header for table */
+    color: white;
+    font-weight: 600; /* Bolder header text */
+    text-align: left;
+}
+
+.furniture-table tr:nth-child(even) {
+    background-color: #f8f9fa; /* Lighter zebra striping */
+}
+.furniture-table tr:hover {
+    background-color: #e9ecef; /* Hover effect for rows */
+}
+
+.furniture-table td:last-child { /* Actions column */
+    text-align: center; /* Center action buttons */
+}
+
+.action-button {
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin: 0 4px;
+    font-size: 0.9em;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+.action-button i {
+    margin-right: 5px;
+}
+
+.edit-button {
+    background-color: #507e7f; /* Yellow for edit */
+    color: white;
+    border-color: #507e7f;
+}
+.edit-button:hover {
+    background-color: RGB(42, 52, 55);
+    border-color: RGB(42, 52, 55);
+}
+
+.delete-button {
+    background-color: #dc3545; /* Red for delete */
+    color: white;
+    border-color: #dc3545;
+}
+.delete-button:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+
+.button-group {
+    margin-top: 30px; /* Space above main action buttons */
+    text-align: center; /* Center main "Add Furniture" button */
+}
+
+.admin-button {
+    background-color: #507e7f; /* Blue for primary actions */
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 6px;
+    margin: 10px;
+    display: inline-flex; /* For icon alignment */
+    align-items: center;
+    font-weight: 500; /* Slightly less bold */
+    transition: background-color 0.3s, transform 0.1s;
+    cursor: pointer;
+    border: none;
+}
+.admin-button i {
+    margin-right: 8px;
+}
+
+.admin-button:hover {
+    background-color: #283438 ; /* Darker blue */
+    transform: translateY(-1px);
+}
+.admin-button:active {
+    transform: translateY(0);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6); /* Darker overlay */
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5vh auto; /* Use vh for vertical centering, allow some top margin */
+    padding: 25px 30px; /* Consistent padding */
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+    width: 90%; /* Responsive width */
+    max-width: 550px; /* Max width for modals */
+    animation: slideInDown 0.4s ease-out;
+}
+
+@keyframes slideInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e9ecef; /* Lighter border */
+    padding-bottom: 15px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: #007bff; /* Blue for modal titles */
+    font-size: 1.4em;
+    font-weight: 600;
+    border-bottom: none; /* Remove redundant border */
+}
+
+.close-btn {
+    font-size: 1.8em; /* Larger close icon */
+    font-weight: bold;
+    color: #6c757d; /* Grey close icon */
+    cursor: pointer;
+    line-height: 1; /* Better vertical alignment */
+    padding: 0 5px; /* Clickable area */
+}
+
+.close-btn:hover {
+    color: #343a40; /* Darker grey on hover */
+}
+
+.form-group {
+    margin-bottom: 18px; /* Slightly less margin */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px; /* Less space between label and input */
+    font-weight: 500; /* Medium weight for labels */
+    color: #495057; /* Dark grey for labels */
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ced4da; /* Standard border */
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.form-control:focus {
+    border-color: #007bff; /* Blue focus border */
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Blue focus shadow */
+}
+
+.button-group-modal {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px; /* Space between modal buttons */
+    margin-top: 25px;
+}
+
+.modal-button {
+    padding: 10px 18px; /* Slightly adjusted padding */
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95em;
+}
+
+.save-button {
+    background-color: #007bff; /* Blue for save */
+    color: white;
+}
+.save-button:hover {
+    background-color: #0056b3; /* Darker blue */
+    transform: translateY(-1px);
+}
+.delete-confirm-button { /* Specific style for delete confirmation */
+    background-color: #dc3545 !important; /* Ensure red color */
+}
+.delete-confirm-button:hover {
+    background-color: #c82333 !important;
+}
+
+
+.cancel-button {
+    background-color: #6c757d; /* Grey for cancel */
+    color: white;
+}
+.cancel-button:hover {
+    background-color: #5a6268; /* Darker grey */
+    transform: translateY(-1px);
+}
+
+
+select.form-control {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+    padding-right: 2.5rem; /* Space for the arrow */
+}
+
+/* For messages if you add them (e.g., after POST) */
+.admin-message {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    text-align: center;
+}
+.admin-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.admin-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}

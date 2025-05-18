@@ -1,0 +1,183 @@
+/* webapp/css/profile.css - Simplified Design */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content-wrap {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align card to top */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.profile-section.card {
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 550px;
+    margin-top: 30px; /* Space from header */
+}
+
+.profile-section h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-weight: 600;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+/* Message Banners */
+.message-banner {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 500;
+}
+.message-banner.success {
+    background-color: #e6fffa;
+    color: #00796b;
+    border: 1px solid #b2dfdb;
+}
+.message-banner.error {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+}
+
+/* Profile Details View */
+.profile-details-view p {
+    margin-bottom: 12px;
+    font-size: 1.05em;
+    padding: 8px 0;
+    border-bottom: 1px dotted #e0e0e0;
+}
+.profile-details-view p:last-child {
+    border-bottom: none;
+}
+.profile-details-view strong {
+    color: #555;
+    display: inline-block;
+    width: 150px; /* Adjust as needed */
+}
+
+/* Forms */
+.profile-form .form-field {
+    margin-bottom: 20px;
+}
+.profile-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #444;
+}
+.profile-form input[type="text"],
+.profile-form input[type="email"],
+.profile-form input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.2s;
+}
+.profile-form input:focus {
+    border-color: #408080; /* Your primary color */
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(64, 128, 128, 0.2);
+}
+.profile-form input.readonly-input {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+/* Action Buttons */
+.profile-actions,
+.form-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center; /* Center buttons in view, right in forms */
+    gap: 15px; /* Space between buttons */
+}
+.form-actions {
+    justify-content: flex-end;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    border: none;
+    display: inline-block;
+    text-align: center;
+}
+.btn-primary {
+    background-color: #408080; /* Primary color */
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #336666; /* Darker primary */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.btn-secondary {
+    background-color: #7f8c8d; /* Secondary color */
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: #6c7a7b;
+}
+.btn-link {
+    background-color: transparent;
+    color: #408080;
+    padding: 10px 15px; /* Less padding for link-like button */
+}
+.btn-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .content-wrap {
+        padding: 15px;
+    }
+    .profile-section.card {
+        padding: 20px;
+        margin-top: 15px;
+    }
+    .profile-actions,
+    .form-actions {
+        flex-direction: column; /* Stack buttons */
+    }
+    .btn {
+        width: 100%;
+        margin-bottom: 10px; /* Space when stacked */
+    }
+    .btn:last-child {
+        margin-bottom: 0;
+    }
+     .profile-details-view strong {
+        width: 120px;
+    }
+}

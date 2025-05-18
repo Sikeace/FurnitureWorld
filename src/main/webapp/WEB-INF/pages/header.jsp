@@ -10,10 +10,15 @@
             <li><a href="${pageContext.request.contextPath}/product"><i class="fa fa-shopping-cart" aria-hidden="true"></i> SHOP</a></li>
             <li><a href="${pageContext.request.contextPath}/admin"><i class="fa fa-users" aria-hidden="true"></i> ADMIN</a></li>
             <li><a href="${pageContext.request.contextPath}/about"><i class="fa fa-info-circle" aria-hidden="true"></i> ABOUT</a></li>
-            <li><a href="${pageContext.request.contextPath}/contact"><i class="fa fa-phone" aria-hidden="true"></i> CONTACT</a></li>
+          	<li><a href="${pageContext.request.contextPath}/contact"><i class="fa fa-phone" aria-hidden="true"></i> CONTACT</a></li>
         </ul>
     </nav>
     <div class="header-actions">
-        <a href="${pageContext.request.contextPath}/login"><i class="fa fa-sign-out" aria-hidden="true"> LogOut</i></a>
+        <a href="${pageContext.request.contextPath}/profile" class="profile-button">
+            <i class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
+        </a>
+        <form action = "logout" method = "post">
+            <button type="submit"><i class="fa fa-sign-out" aria-hidden="true"> LogOut</i></button>
+        </form>
     </div>
 </header>

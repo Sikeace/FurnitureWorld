@@ -1,0 +1,178 @@
+/* css/view.css */
+
+/* General Body and Container Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Product Detail Page Content Area */
+.product-detail-page-content {
+    width: 80%;
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-sizing: border-box;
+}
+
+/* Product Detail Layout (Image and Info) */
+.product-detail-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 30px;
+}
+
+.product-detail-image-section {
+    flex: 1 1 400px; /* Grow, shrink, basis */
+    max-width: 500px; /* Max width for image container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: #fdfdfd;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+
+.product-detail-image-section img {
+    max-width: 100%;
+    max-height: 450px; /* Control max image height */
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.product-detail-info-section {
+    flex: 1 1 500px; /* Grow, shrink, basis */
+    padding-left: 20px; /* Space from image on larger screens */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Product Detail Information Styles */
+.product-detail-info-section h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.detail-price {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #306060; /* Theme color for price */
+    margin-bottom: 20px;
+}
+
+.detail-description {
+    font-size: 1em;
+    color: #555e68;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+.detail-contact {
+    font-size: 1em;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 30px;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-left: 4px solid #408080;
+    border-radius: 4px;
+}
+
+/* Button Styles */
+.btn-back-to-shop {
+    display: inline-block;
+    background-color: #408080;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    align-self: flex-start; /* Align button to the start of flex container */
+}
+
+.btn-back-to-shop:hover {
+    background-color: #306060;
+}
+
+/* Product Not Found Styles */
+.product-not-found {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.product-not-found h2 {
+    font-size: 1.8em;
+    color: #c0392b; /* A reddish color for error */
+    margin-bottom: 15px;
+}
+
+.product-not-found p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* Responsive adjustments for Product Detail Page */
+@media (max-width: 900px) { /* Tablet and smaller */
+    .product-detail-container {
+        flex-direction: column; /* Stack image and info */
+        align-items: center; /* Center items when stacked */
+    }
+    .product-detail-image-section {
+        max-width: 100%; /* Allow image section to take full width */
+        margin-bottom: 20px;
+    }
+    .product-detail-info-section {
+        padding-left: 0; /* Remove padding when stacked */
+        align-items: center; /* Center text content */
+        text-align: center;
+    }
+    .detail-description {
+        text-align: left; /* Keep description left aligned for readability when centered */
+    }
+     .btn-back-to-shop {
+        align-self: center; /* Center button */
+    }
+}
+
+@media (max-width: 576px) { /* Mobile */
+    .product-detail-page-content {
+        width: 95%;
+        padding: 15px;
+    }
+    .product-detail-info-section h1 {
+        font-size: 1.8em;
+    }
+    .detail-price {
+        font-size: 1.5em;
+    }
+    .detail-description {
+        font-size: 0.95em;
+    }
+    .btn-back-to-shop {
+        width: 100%; /* Full width button */
+        box-sizing: border-box;
+    }
+}

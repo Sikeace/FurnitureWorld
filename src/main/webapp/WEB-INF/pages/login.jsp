@@ -55,7 +55,7 @@
                                 <hr>
                             </div>
                             <a href = "${pageContext.request.contextPath}/register" class="signup-button">Sign Up</a>
-                            <a href="" class="forgot-password">Forgot Password?</a>
+                            
                         </div>
                     </form>
                     

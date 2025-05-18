@@ -24,7 +24,7 @@
                 <div class="contact-details">
                     <p class="detail-item">
                         <strong><i class="fa fa-phone" aria-hidden="true"></i>PHONE</strong><br>
-                        123-456-7890
+                        +977 9851098701
                     </p>
                     <p class="detail-item">
                         <strong><i class="fa fa-envelope" aria-hidden="true"></i>EMAIL</strong><br>

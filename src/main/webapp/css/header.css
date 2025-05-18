@@ -8,16 +8,11 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+	width: 100%;
     margin: 0 auto;
     background-color: #fff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
     overflow: hidden;
-}
-
-a {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
 }
 
 .login-button{
@@ -28,25 +23,29 @@ a {
 	color: rgb(255, 255, 255);
 }
 
-a:hover {
-    color: #408080; /* Example hover color */
-}
-
 img {
     display: block;
     max-width: 100%;
     height: auto;
 }
 
-
-
-
-
 h1, h2 {
     color: #444;
     margin-bottom: 1em;
 }
 
+.header-actions form button{
+	padding: 10px;
+	color: white;
+	background-color: #283438;
+	border: none;
+	outline: none;
+}
+
+.header-actions form button:hover{
+	color: #408080;
+	cursor: pointer;
+}
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .container {
@@ -125,6 +124,50 @@ body .container .main-header { /* Increased specificity */
 
 .header-actions .icon-link img {
     height: 24px;
+}
+
+/* ... other header styles ... */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.header-actions .profile-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #a8dadc; /* A contrasting light teal */
+    color: #1d3557; /* A darker blue */
+    border-radius: 50%;
+    width: 40px; /* Increased size */
+    height: 40px; /* Increased size */
+    margin-right: 10px; /* Add margin to the right of the profile button */
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header-actions .profile-button:hover {
+    background-color: #408080; /* Light blue hover color from "SHOP NOW" */
+    color: white;
+}
+
+.header-actions .profile-button i {
+    margin: 0; /* Ensure icon is centered */
+}
+
+.header-actions form button{
+	padding: 10px;
+	color: white;
+	background-color: #283438;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.header-actions form button:hover{
+	color: #408080; /* Light blue hover color from "SHOP NOW" */
 }
 
 

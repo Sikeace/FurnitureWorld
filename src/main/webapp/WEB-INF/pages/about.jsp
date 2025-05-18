@@ -25,9 +25,9 @@
                 </div>
                 <div class="hero-text">
                     <h2>CEO</h2>
-                    <h1>Ben Dover</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h1>Kayosh Raj Pradhan </h1>
+                    <p>Furniture World was founded with a clear vision to become the leading destination in Purano Baneshwor, Kathmandu, for individuals and families seeking to create beautiful, comfortable, and functional living spaces. More than just a retail store, we are a team deeply passionate about home furnishings and dedicated to understanding the unique aspirations of our community. From our showroom in the vibrant heart of Purano Baneshwor, we've made it our mission to help our neighbours transform their houses into homes that truly reflect their personalities and lifestyles, one carefully chosen piece at a time.</p>
+                    <p>Our core mission is to provide an exceptional selection of quality-crafted furniture, ensuring durability and lasting style for every item that leaves our store. We believe in offering diverse styles, from contemporary trends to timeless classics and designs that resonate with traditional Nepali aesthetics, all at fair value. Central to our ethos is an unwavering commitment to customer satisfaction; our knowledgeable team is always on hand to offer personalized guidance, helping you navigate our collections to find the perfect items. We are proud to be a local business, dedicated to serving the Kathmandu community with integrity and a genuine desire to enhance the comfort and beauty of your homes.</p>
                     	<div class="Thankyou">
                 		<h1>Where Comfort Meets Style</h1>
                 		</div>

@@ -58,7 +58,7 @@ public class PasswordUtil {
     }
 
     // return a base64 encoded AES encrypted text
-    public static String encrypt(String employee_id, String password){
+    public static String encrypt(String user_id, String password){
     	try {
 		    // 16 bytes salt
 		    byte[] salt = getRandomNonce(SALT_LENGTH_BYTE);
@@ -67,7 +67,7 @@ public class PasswordUtil {
 		    byte[] iv = getRandomNonce(IV_LENGTH_BYTE);
 		
 		    // secret key from password
-		    SecretKey aesKeyFromPassword = getAESKeyFromPassword(employee_id.toCharArray(), salt);
+		    SecretKey aesKeyFromPassword = getAESKeyFromPassword(user_id.toCharArray(), salt);
 		
 		    Cipher cipher = Cipher.getInstance(ENCRYPT_ALGO);
 		
@@ -88,7 +88,6 @@ public class PasswordUtil {
     	}catch(Exception ex) {
     		return null;
     	}
-
     }
 
     
@@ -121,7 +120,5 @@ public class PasswordUtil {
 		}catch(Exception ex) {
 			return null;
 		}
-
 	}
- 
 }

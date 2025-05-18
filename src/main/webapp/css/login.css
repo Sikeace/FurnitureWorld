@@ -136,16 +136,6 @@
     color:white;
 }
 
-.forgot-password {
-    text-align: center;
-    color: #555;
-    font-size: 0.9em;
-}
-
-.forgot-password:hover {
-    color: #408080;
-}
-
 .separator {
     display: flex;
     align-items: center;
